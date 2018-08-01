@@ -1,16 +1,16 @@
 package cn.scau.myteam.pojo;
 
-public class ObjectUsersKey {
-    private Integer otid;
+public class ProjectUsersKey {
+    private Integer ptid;
 
     private Integer uid;
 
-    public Integer getOtid() {
-        return otid;
+    public Integer getPtid() {
+        return ptid;
     }
 
-    public void setOtid(Integer otid) {
-        this.otid = otid;
+    public void setPtid(Integer ptid) {
+        this.ptid = ptid;
     }
 
     public Integer getUid() {

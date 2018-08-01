@@ -164,63 +164,63 @@ public class FileExample {
             return (Criteria) this;
         }
 
-        public Criteria andOtidIsNull() {
-            addCriterion("otid is null");
+        public Criteria andPtidIsNull() {
+            addCriterion("ptid is null");
             return (Criteria) this;
         }
 
-        public Criteria andOtidIsNotNull() {
-            addCriterion("otid is not null");
+        public Criteria andPtidIsNotNull() {
+            addCriterion("ptid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOtidEqualTo(Integer value) {
-            addCriterion("otid =", value, "otid");
+        public Criteria andPtidEqualTo(Integer value) {
+            addCriterion("ptid =", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidNotEqualTo(Integer value) {
-            addCriterion("otid <>", value, "otid");
+        public Criteria andPtidNotEqualTo(Integer value) {
+            addCriterion("ptid <>", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidGreaterThan(Integer value) {
-            addCriterion("otid >", value, "otid");
+        public Criteria andPtidGreaterThan(Integer value) {
+            addCriterion("ptid >", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("otid >=", value, "otid");
+        public Criteria andPtidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ptid >=", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidLessThan(Integer value) {
-            addCriterion("otid <", value, "otid");
+        public Criteria andPtidLessThan(Integer value) {
+            addCriterion("ptid <", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidLessThanOrEqualTo(Integer value) {
-            addCriterion("otid <=", value, "otid");
+        public Criteria andPtidLessThanOrEqualTo(Integer value) {
+            addCriterion("ptid <=", value, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidIn(List<Integer> values) {
-            addCriterion("otid in", values, "otid");
+        public Criteria andPtidIn(List<Integer> values) {
+            addCriterion("ptid in", values, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidNotIn(List<Integer> values) {
-            addCriterion("otid not in", values, "otid");
+        public Criteria andPtidNotIn(List<Integer> values) {
+            addCriterion("ptid not in", values, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidBetween(Integer value1, Integer value2) {
-            addCriterion("otid between", value1, value2, "otid");
+        public Criteria andPtidBetween(Integer value1, Integer value2) {
+            addCriterion("ptid between", value1, value2, "ptid");
             return (Criteria) this;
         }
 
-        public Criteria andOtidNotBetween(Integer value1, Integer value2) {
-            addCriterion("otid not between", value1, value2, "otid");
+        public Criteria andPtidNotBetween(Integer value1, Integer value2) {
+            addCriterion("ptid not between", value1, value2, "ptid");
             return (Criteria) this;
         }
 

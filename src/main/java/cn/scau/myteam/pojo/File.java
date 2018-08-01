@@ -3,7 +3,7 @@ package cn.scau.myteam.pojo;
 public class File {
     private Integer id;
 
-    private Integer otid;
+    private Integer ptid;
 
     private Integer tid;
 
@@ -19,12 +19,12 @@ public class File {
         this.id = id;
     }
 
-    public Integer getOtid() {
-        return otid;
+    public Integer getPtid() {
+        return ptid;
     }
 
-    public void setOtid(Integer otid) {
-        this.otid = otid;
+    public void setPtid(Integer ptid) {
+        this.ptid = ptid;
     }
 
     public Integer getTid() {

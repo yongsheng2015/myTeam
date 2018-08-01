@@ -2,7 +2,7 @@ package cn.scau.myteam.pojo;
 
 import java.util.Date;
 
-public class ObjectTable {
+public class ProjectTable {
     private Integer id;
 
     private String title;

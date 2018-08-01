@@ -5,7 +5,7 @@ import java.util.Date;
 public class Task {
     private Integer id;
 
-    private Integer otid;
+    private Integer ptid;
 
     private Integer uid;
 
@@ -29,12 +29,12 @@ public class Task {
         this.id = id;
     }
 
-    public Integer getOtid() {
-        return otid;
+    public Integer getPtid() {
+        return ptid;
     }
 
-    public void setOtid(Integer otid) {
-        this.otid = otid;
+    public void setPtid(Integer ptid) {
+        this.ptid = ptid;
     }
 
     public Integer getUid() {

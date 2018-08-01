@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.scau.myteam.mapper.ObjectUsersMapper">
-  <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.ObjectUsersKey">
-    <id column="otid" jdbcType="INTEGER" property="otid" />
+<mapper namespace="cn.scau.myteam.mapper.ProjectUsersMapper">
+  <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.ProjectUsersKey">
+    <id column="ptid" jdbcType="INTEGER" property="ptid" />
     <id column="uid" jdbcType="INTEGER" property="uid" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -35,16 +35,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    otid, uid
+    ptid, uid
   </sql>
-  <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ObjectUsersExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ProjectUsersExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from objectUsers
+    from projectUsers
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -52,28 +52,28 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="cn.scau.myteam.pojo.ObjectUsersKey">
-    delete from objectUsers
-    where otid = #{otid,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="cn.scau.myteam.pojo.ProjectUsersKey">
+    delete from projectUsers
+    where ptid = #{ptid,jdbcType=INTEGER}
       and uid = #{uid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.scau.myteam.pojo.ObjectUsersKey">
-    insert into objectUsers (otid, uid)
-    values (#{otid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER})
+  <insert id="insert" parameterType="cn.scau.myteam.pojo.ProjectUsersKey">
+    insert into projectUsers (ptid, uid)
+    values (#{ptid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="cn.scau.myteam.pojo.ObjectUsersKey">
-    insert into objectUsers
+  <insert id="insertSelective" parameterType="cn.scau.myteam.pojo.ProjectUsersKey">
+    insert into projectUsers
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="otid != null">
-        otid,
+      <if test="ptid != null">
+        ptid,
       </if>
       <if test="uid != null">
         uid,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="otid != null">
-        #{otid,jdbcType=INTEGER},
+      <if test="ptid != null">
+        #{ptid,jdbcType=INTEGER},
       </if>
       <if test="uid != null">
         #{uid,jdbcType=INTEGER},

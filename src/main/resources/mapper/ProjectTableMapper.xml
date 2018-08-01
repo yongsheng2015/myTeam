@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.scau.myteam.mapper.ObjectTableMapper">
-  <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.ObjectTable">
+<mapper namespace="cn.scau.myteam.mapper.ProjectTableMapper">
+  <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.ProjectTable">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="intro" jdbcType="VARCHAR" property="intro" />
@@ -40,14 +40,14 @@
   <sql id="Base_Column_List">
     id, title, intro, createTime, endTime
   </sql>
-  <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ObjectTableExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ProjectTableExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from objectTable
+    from projectTable
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -58,21 +58,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from objectTable
+    from projectTable
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from objectTable
+    delete from projectTable
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ObjectTable" useGeneratedKeys="true">
-    insert into objectTable (title, intro, createTime, 
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ProjectTable" useGeneratedKeys="true">
+    insert into projectTable (title, intro, createTime, 
       endTime)
     values (#{title,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{endTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ObjectTable" useGeneratedKeys="true">
-    insert into objectTable
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ProjectTable" useGeneratedKeys="true">
+    insert into projectTable
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="title != null">
         title,
@@ -102,8 +102,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scau.myteam.pojo.ObjectTable">
-    update objectTable
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scau.myteam.pojo.ProjectTable">
+    update projectTable
     <set>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
@@ -120,8 +120,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scau.myteam.pojo.ObjectTable">
-    update objectTable
+  <update id="updateByPrimaryKey" parameterType="cn.scau.myteam.pojo.ProjectTable">
+    update projectTable
     set title = #{title,jdbcType=VARCHAR},
       intro = #{intro,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},
