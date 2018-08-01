@@ -165,63 +165,63 @@ public class TaskExample {
             return (Criteria) this;
         }
 
-        public Criteria andPtidIsNull() {
-            addCriterion("ptid is null");
+        public Criteria andPpidIsNull() {
+            addCriterion("ppid is null");
             return (Criteria) this;
         }
 
-        public Criteria andPtidIsNotNull() {
-            addCriterion("ptid is not null");
+        public Criteria andPpidIsNotNull() {
+            addCriterion("ppid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPtidEqualTo(Integer value) {
-            addCriterion("ptid =", value, "ptid");
+        public Criteria andPpidEqualTo(Integer value) {
+            addCriterion("ppid =", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidNotEqualTo(Integer value) {
-            addCriterion("ptid <>", value, "ptid");
+        public Criteria andPpidNotEqualTo(Integer value) {
+            addCriterion("ppid <>", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidGreaterThan(Integer value) {
-            addCriterion("ptid >", value, "ptid");
+        public Criteria andPpidGreaterThan(Integer value) {
+            addCriterion("ppid >", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("ptid >=", value, "ptid");
+        public Criteria andPpidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ppid >=", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidLessThan(Integer value) {
-            addCriterion("ptid <", value, "ptid");
+        public Criteria andPpidLessThan(Integer value) {
+            addCriterion("ppid <", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidLessThanOrEqualTo(Integer value) {
-            addCriterion("ptid <=", value, "ptid");
+        public Criteria andPpidLessThanOrEqualTo(Integer value) {
+            addCriterion("ppid <=", value, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidIn(List<Integer> values) {
-            addCriterion("ptid in", values, "ptid");
+        public Criteria andPpidIn(List<Integer> values) {
+            addCriterion("ppid in", values, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidNotIn(List<Integer> values) {
-            addCriterion("ptid not in", values, "ptid");
+        public Criteria andPpidNotIn(List<Integer> values) {
+            addCriterion("ppid not in", values, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidBetween(Integer value1, Integer value2) {
-            addCriterion("ptid between", value1, value2, "ptid");
+        public Criteria andPpidBetween(Integer value1, Integer value2) {
+            addCriterion("ppid between", value1, value2, "ppid");
             return (Criteria) this;
         }
 
-        public Criteria andPtidNotBetween(Integer value1, Integer value2) {
-            addCriterion("ptid not between", value1, value2, "ptid");
+        public Criteria andPpidNotBetween(Integer value1, Integer value2) {
+            addCriterion("ppid not between", value1, value2, "ppid");
             return (Criteria) this;
         }
 

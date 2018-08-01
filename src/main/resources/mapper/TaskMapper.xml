@@ -3,7 +3,7 @@
 <mapper namespace="cn.scau.myteam.mapper.TaskMapper">
   <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.Task">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="ptid" jdbcType="INTEGER" property="ptid" />
+    <result column="ppid" jdbcType="INTEGER" property="ppid" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
@@ -42,7 +42,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, ptid, uid, createTime, endTime, setRepeat, label, priority, intro
+    id, ppid, uid, createTime, endTime, setRepeat, label, priority, intro
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.TaskExample" resultMap="BaseResultMap">
     select
@@ -70,18 +70,18 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Task" useGeneratedKeys="true">
-    insert into task (ptid, uid, createTime, 
+    insert into task (ppid, uid, createTime, 
       endTime, setRepeat, label, 
       priority, intro)
-    values (#{ptid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{ppid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{endTime,jdbcType=TIMESTAMP}, #{setRepeat,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, 
       #{priority,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Task" useGeneratedKeys="true">
     insert into task
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="ptid != null">
-        ptid,
+      <if test="ppid != null">
+        ppid,
       </if>
       <if test="uid != null">
         uid,
@@ -106,8 +106,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="ptid != null">
-        #{ptid,jdbcType=INTEGER},
+      <if test="ppid != null">
+        #{ppid,jdbcType=INTEGER},
       </if>
       <if test="uid != null">
         #{uid,jdbcType=INTEGER},
@@ -135,8 +135,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scau.myteam.pojo.Task">
     update task
     <set>
-      <if test="ptid != null">
-        ptid = #{ptid,jdbcType=INTEGER},
+      <if test="ppid != null">
+        ppid = #{ppid,jdbcType=INTEGER},
       </if>
       <if test="uid != null">
         uid = #{uid,jdbcType=INTEGER},
@@ -164,7 +164,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scau.myteam.pojo.Task">
     update task
-    set ptid = #{ptid,jdbcType=INTEGER},
+    set ppid = #{ppid,jdbcType=INTEGER},
       uid = #{uid,jdbcType=INTEGER},
       createTime = #{createTime,jdbcType=TIMESTAMP},
       endTime = #{endTime,jdbcType=TIMESTAMP},

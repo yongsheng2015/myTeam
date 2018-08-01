@@ -5,7 +5,7 @@ import java.util.Date;
 public class Task {
     private Integer id;
 
-    private Integer ptid;
+    private Integer ppid;
 
     private Integer uid;
 
@@ -29,12 +29,12 @@ public class Task {
         this.id = id;
     }
 
-    public Integer getPtid() {
-        return ptid;
+    public Integer getPpid() {
+        return ppid;
     }
 
-    public void setPtid(Integer ptid) {
-        this.ptid = ptid;
+    public void setPpid(Integer ppid) {
+        this.ppid = ppid;
     }
 
     public Integer getUid() {
