@@ -4,7 +4,7 @@ public class TaskUsersKey {
     private Integer tid;
 
     private Integer uid;
-
+    
     public Integer getTid() {
         return tid;
     }

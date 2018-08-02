@@ -3,9 +3,10 @@ package cn.scau.myteam.pojo;
 public class ProjectPhase {
     private Integer id;
 
-    private Integer ptid;
+    /*private Integer ptid;*/
+    private ProjectTable projectTable;
 
-    private String name;
+	private String name;
 
     public Integer getId() {
         return id;
@@ -15,13 +16,22 @@ public class ProjectPhase {
         this.id = id;
     }
 
-    public Integer getPtid() {
+    /*public Integer getPtid() {
         return ptid;
     }
 
     public void setPtid(Integer ptid) {
         this.ptid = ptid;
-    }
+    }*/
+    //update start
+    public ProjectTable getProjectTable() {
+		return projectTable;
+	}
+
+	public void setProjectTable(ProjectTable projectTable) {
+		this.projectTable = projectTable;
+	}
+	//update end
 
     public String getName() {
         return name;

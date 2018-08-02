@@ -5,9 +5,11 @@ import java.util.Date;
 public class Task {
     private Integer id;
 
-    private Integer ppid;
+    /*private Integer ppid;
 
-    private Integer uid;
+    private Integer uid;*/
+    private ProjectPhase projectPhase;
+    private User leader;
 
     private Date createTime;
 
@@ -29,11 +31,11 @@ public class Task {
         this.id = id;
     }
 
-    public Integer getPpid() {
+    /*public Integer getPpid() {
         return ppid;
     }
 
-    public void setPpid(Integer ppid) {
+	public void setPpid(Integer ppid) {
         this.ppid = ppid;
     }
 
@@ -43,9 +45,27 @@ public class Task {
 
     public void setUid(Integer uid) {
         this.uid = uid;
-    }
+    }*/
+  //update start;
+    public ProjectPhase getProjectPhase() {
+		return projectPhase;
+	}
 
-    public Date getCreateTime() {
+	public void setProjectPhase(ProjectPhase projectPhase) {
+		this.projectPhase = projectPhase;
+	}
+	
+	public User getLeader() {
+		return leader;
+	}
+
+	public void setLeader(User leader) {
+		this.leader = leader;
+	}
+	
+    //update end;
+
+	public Date getCreateTime() {
         return createTime;
     }
 

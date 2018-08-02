@@ -3,13 +3,16 @@ package cn.scau.myteam.pojo;
 public class File {
     private Integer id;
 
-    private Integer ptid;
+    /*private Integer ptid;
 
-    private Integer tid;
+    private Integer tid;*/
+    
+    private ProjectTable projectTable;
+    private Task task;
 
     private String type;
 
-    private String name;
+	private String name;
 
     public Integer getId() {
         return id;
@@ -19,21 +22,23 @@ public class File {
         this.id = id;
     }
 
-    public Integer getPtid() {
-        return ptid;
-    }
+    //修改部分：start
+    public ProjectTable getProjectTable() {
+		return projectTable;
+	}
 
-    public void setPtid(Integer ptid) {
-        this.ptid = ptid;
-    }
+	public void setProjectTable(ProjectTable projectTable) {
+		this.projectTable = projectTable;
+	}
 
-    public Integer getTid() {
-        return tid;
-    }
+	public Task getTask() {
+		return task;
+	}
 
-    public void setTid(Integer tid) {
-        this.tid = tid;
-    }
+	public void setTask(Task task) {
+		this.task = task;
+	}
+	//修改部分：end
 
     public String getType() {
         return type;

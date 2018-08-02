@@ -5,7 +5,7 @@ public class ProjectUsersKey {
 
     private Integer uid;
 
-    public Integer getPtid() {
+	public Integer getPtid() {
         return ptid;
     }
 
