@@ -9,10 +9,10 @@ public class Task {
 
     private Integer uid;
     
-    private ProjectPhase projectPhase;//add:增加部分
-    private User leader;//add:增加部分
+    private ProjectPhase projectPhase;//add
+    private User leader;//add 
 
-    private Date createTime;
+	private Date createTime;
 
     private Date endTime;
 
@@ -36,7 +36,7 @@ public class Task {
         return ppid;
     }
 
-	public void setPpid(Integer ppid) {
+    public void setPpid(Integer ppid) {
         this.ppid = ppid;
     }
 
@@ -47,26 +47,8 @@ public class Task {
     public void setUid(Integer uid) {
         this.uid = uid;
     }
-  //update start;
-    public ProjectPhase getProjectPhase() {
-		return projectPhase;
-	}
 
-	public void setProjectPhase(ProjectPhase projectPhase) {
-		this.projectPhase = projectPhase;
-	}
-	
-	public User getLeader() {
-		return leader;
-	}
-
-	public void setLeader(User leader) {
-		this.leader = leader;
-	}
-	
-    //update end;
-
-	public Date getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
@@ -113,4 +95,23 @@ public class Task {
     public void setIntro(String intro) {
         this.intro = intro == null ? null : intro.trim();
     }
+    
+    //add:start
+    public ProjectPhase getProjectPhase() {
+		return projectPhase;
+	}
+
+	public void setProjectPhase(ProjectPhase projectPhase) {
+		this.projectPhase = projectPhase;
+	}
+
+	public User getLeader() {
+		return leader;
+	}
+
+	public void setLeader(User leader) {
+		this.leader = leader;
+	}
+    //add:end
+    
 }

@@ -1,18 +1,18 @@
 package cn.scau.myteam.pojo;
 
-public class File {
+public class FileTable {
     private Integer id;
 
     private Integer ptid;
 
     private Integer tid;
     
-    private ProjectTable projectTable;//add:增加部分
-    private Task task;//add:增加部分
-    
+    private ProjectTable projectTable;//add
+    private Task task;//add
+
 	private String type;
 
-	private String name;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -21,25 +21,24 @@ public class File {
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     public Integer getPtid() {
-		return ptid;
-	}
+        return ptid;
+    }
 
-	public void setPtid(Integer ptid) {
-		this.ptid = ptid;
-	}
+    public void setPtid(Integer ptid) {
+        this.ptid = ptid;
+    }
 
-	public Integer getTid() {
-		return tid;
-	}
+    public Integer getTid() {
+        return tid;
+    }
 
-	public void setTid(Integer tid) {
-		this.tid = tid;
-	}
-
-
-    //增加部分：start
+    public void setTid(Integer tid) {
+        this.tid = tid;
+    }
+    
+    //add:start
     public ProjectTable getProjectTable() {
 		return projectTable;
 	}
@@ -55,7 +54,7 @@ public class File {
 	public void setTask(Task task) {
 		this.task = task;
 	}
-	//增加部分：end
+	//add:end
 
     public String getType() {
         return type;

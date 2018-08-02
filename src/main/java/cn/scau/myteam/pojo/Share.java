@@ -7,9 +7,9 @@ public class Share {
 
     private Integer tid;
     
-    private ProjectTable projectTable;//add:增加部分
-    private Task task;//add:增加部分
-    
+    private ProjectTable projectTable;//add
+    private Task task;//add
+
 	private String title;
 
     private String content;
@@ -37,24 +37,7 @@ public class Share {
     public void setTid(Integer tid) {
         this.tid = tid;
     }
-    //update start;
-    public ProjectTable getProjectTable() {
-		return projectTable;
-	}
 
-	public void setProjectTable(ProjectTable projectTable) {
-		this.projectTable = projectTable;
-	}
-
-	public Task getTask() {
-		return task;
-	}
-
-	public void setTask(Task task) {
-		this.task = task;
-	}
-	//update end;
-	
     public String getTitle() {
         return title;
     }
@@ -70,4 +53,22 @@ public class Share {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+    
+    //add:start
+    public ProjectTable getProjectTable() {
+		return projectTable;
+	}
+
+	public void setProjectTable(ProjectTable projectTable) {
+		this.projectTable = projectTable;
+	}
+
+	public Task getTask() {
+		return task;
+	}
+
+	public void setTask(Task task) {
+		this.task = task;
+	}
+    //add:end
 }

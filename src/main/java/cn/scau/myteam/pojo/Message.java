@@ -4,12 +4,12 @@ public class Message {
     private Integer id;
 
     private Integer senderId;
-    
-	private Integer receiverId;
-	
-	private User sender;//add:增加部分
-	private User receiver;//add:增加部分
 
+    private Integer receiverId;
+    
+    private User sender; //add  
+    private User receiver; //add
+  
 	private String content;
 
     public Integer getId() {
@@ -27,6 +27,7 @@ public class Message {
     public void setSenderId(Integer senderId) {
         this.senderId = senderId;
     }
+
     
     public Integer getReceiverId() {
         return receiverId;
@@ -35,8 +36,8 @@ public class Message {
     public void setReceiverId(Integer receiverId) {
         this.receiverId = receiverId;
     }
-    
-  //update start;
+
+  //add:start
     public User getSender() {
 		return sender;
 	}
@@ -44,7 +45,7 @@ public class Message {
 	public void setSender(User sender) {
 		this.sender = sender;
 	}
-	
+
 	public User getReceiver() {
 		return receiver;
 	}
@@ -52,8 +53,8 @@ public class Message {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
-	//update end;
-
+	//add:end
+    
     public String getContent() {
         return content;
     }

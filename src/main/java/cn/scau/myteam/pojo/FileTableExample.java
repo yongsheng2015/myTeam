@@ -3,14 +3,14 @@ package cn.scau.myteam.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileExample {
+public class FileTableExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public FileExample() {
+    public FileTableExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
