@@ -3,12 +3,12 @@ package cn.scau.myteam.pojo;
 public class Message {
     private Integer id;
 
-    /*private Integer senderId;
+    private Integer senderId;
     
 	private Integer receiverId;
-	*/
-	private User sender;
-	private User receiver;
+	
+	private User sender;//add:增加部分
+	private User receiver;//add:增加部分
 
 	private String content;
 
@@ -20,7 +20,7 @@ public class Message {
         this.id = id;
     }
 
-    /*public Integer getSenderId() {
+    public Integer getSenderId() {
         return senderId;
     }
 
@@ -35,7 +35,7 @@ public class Message {
     public void setReceiverId(Integer receiverId) {
         this.receiverId = receiverId;
     }
-    */
+    
   //update start;
     public User getSender() {
 		return sender;

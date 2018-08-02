@@ -3,11 +3,12 @@ package cn.scau.myteam.pojo;
 public class Share {
     private Integer id;
 
-    /*private Integer ptid;
+    private Integer ptid;
 
-    private Integer tid;*/
-    private ProjectTable projectTable;
-    private Task task;
+    private Integer tid;
+    
+    private ProjectTable projectTable;//add:增加部分
+    private Task task;//add:增加部分
     
 	private String title;
 
@@ -21,7 +22,7 @@ public class Share {
         this.id = id;
     }
 
-    /*public Integer getPtid() {
+    public Integer getPtid() {
         return ptid;
     }
 
@@ -35,7 +36,7 @@ public class Share {
 
     public void setTid(Integer tid) {
         this.tid = tid;
-    }*/
+    }
     //update start;
     public ProjectTable getProjectTable() {
 		return projectTable;
