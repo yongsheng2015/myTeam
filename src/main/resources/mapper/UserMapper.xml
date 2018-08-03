@@ -10,6 +10,7 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="birthday" jdbcType="DATE" property="birthday" />
     <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -41,7 +42,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, password, position, phone, email, birthday, address
+    id, name, password, position, phone, email, birthday, address, createTime
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.UserExample" resultMap="BaseResultMap">
     select
@@ -71,10 +72,10 @@
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.User" useGeneratedKeys="true">
     insert into user (name, password, position, 
       phone, email, birthday, 
-      address)
+      address, createTime)
     values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
-      #{address,jdbcType=VARCHAR})
+      #{address,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.User" useGeneratedKeys="true">
     insert into user
@@ -100,6 +101,9 @@
       <if test="address != null">
         address,
       </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -122,6 +126,9 @@
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -149,6 +156,9 @@
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
       </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -160,7 +170,8 @@
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
-      address = #{address,jdbcType=VARCHAR}
+      address = #{address,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -7,6 +7,7 @@
     <result column="tid" jdbcType="INTEGER" property="tid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -38,7 +39,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, ptid, tid, title, content
+    id, ptid, tid, title, content, createTime
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ShareExample" resultMap="BaseResultMap">
     select
@@ -67,9 +68,9 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Share" useGeneratedKeys="true">
     insert into share (ptid, tid, title, 
-      content)
+      content, createTime)
     values (#{ptid,jdbcType=INTEGER}, #{tid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{content,jdbcType=VARCHAR})
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Share" useGeneratedKeys="true">
     insert into share
@@ -86,6 +87,9 @@
       <if test="content != null">
         content,
       </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="ptid != null">
@@ -99,6 +103,9 @@
       </if>
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -117,6 +124,9 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -125,7 +135,8 @@
     set ptid = #{ptid,jdbcType=INTEGER},
       tid = #{tid,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR}
+      content = #{content,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

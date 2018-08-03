@@ -19,6 +19,8 @@ public class User {
 
     private String address;
 
+    private Date createTime;
+
     public Integer getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

@@ -1,6 +1,7 @@
 package cn.scau.myteam.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class FileTableExample {
@@ -421,6 +422,66 @@ public class FileTableExample {
 
         public Criteria andNameNotBetween(String value1, String value2) {
             addCriterion("name not between", value1, value2, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeIsNull() {
+            addCriterion("creatTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeIsNotNull() {
+            addCriterion("creatTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeEqualTo(Date value) {
+            addCriterion("creatTime =", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeNotEqualTo(Date value) {
+            addCriterion("creatTime <>", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeGreaterThan(Date value) {
+            addCriterion("creatTime >", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("creatTime >=", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeLessThan(Date value) {
+            addCriterion("creatTime <", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeLessThanOrEqualTo(Date value) {
+            addCriterion("creatTime <=", value, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeIn(List<Date> values) {
+            addCriterion("creatTime in", values, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeNotIn(List<Date> values) {
+            addCriterion("creatTime not in", values, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeBetween(Date value1, Date value2) {
+            addCriterion("creatTime between", value1, value2, "creatTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatTimeNotBetween(Date value1, Date value2) {
+            addCriterion("creatTime not between", value1, value2, "creatTime");
             return (Criteria) this;
         }
     }
