@@ -1,5 +1,7 @@
 package cn.scau.myteam.pojo;
 
+import java.util.Date;
+
 public class FileTable {
     private Integer id;
 
@@ -8,11 +10,14 @@ public class FileTable {
     private Integer tid;
     
     private ProjectTable projectTable;//add
+    
     private Task task;//add
 
-	private String type;
+    private String type;
 
     private String name;
+
+    private Date creatTime;
 
     public Integer getId() {
         return id;
@@ -37,8 +42,7 @@ public class FileTable {
     public void setTid(Integer tid) {
         this.tid = tid;
     }
-    
-    //add:start
+
     public ProjectTable getProjectTable() {
 		return projectTable;
 	}
@@ -54,9 +58,8 @@ public class FileTable {
 	public void setTask(Task task) {
 		this.task = task;
 	}
-	//add:end
 
-    public String getType() {
+	public String getType() {
         return type;
     }
 
@@ -71,4 +74,14 @@ public class FileTable {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    public Date getCreatTime() {
+        return creatTime;
+    }
+
+    public void setCreatTime(Date creatTime) {
+        this.creatTime = creatTime;
+    }
+    
+    
 }

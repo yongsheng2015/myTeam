@@ -1,5 +1,7 @@
 package cn.scau.myteam.pojo;
 
+import java.util.Date;
+
 public class Message {
     private Integer id;
 
@@ -7,10 +9,13 @@ public class Message {
 
     private Integer receiverId;
     
-    private User sender; //add  
-    private User receiver; //add
-  
-	private String content;
+    private User sender;//add
+    
+    private User receiver;//add
+
+    private String content;
+
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -28,7 +33,6 @@ public class Message {
         this.senderId = senderId;
     }
 
-    
     public Integer getReceiverId() {
         return receiverId;
     }
@@ -36,8 +40,12 @@ public class Message {
     public void setReceiverId(Integer receiverId) {
         this.receiverId = receiverId;
     }
-
+    
   //add:start
+    public String getContent() {
+        return content;
+    }
+
     public User getSender() {
 		return sender;
 	}
@@ -53,13 +61,17 @@ public class Message {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
-	//add:end
-    
-    public String getContent() {
-        return content;
+	//add：end
+
+	public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
