@@ -13,6 +13,8 @@ public class ProjectController {
 	@Autowired
 	private ProjectTableService projectTableService;
 	
+	//创建新的项目
+	
 	//查看我创建的项目
 //	@ResponseBody
 //	@RequestMapping(value="/fingMyproject",produces="application/json;charset=utf-8")
