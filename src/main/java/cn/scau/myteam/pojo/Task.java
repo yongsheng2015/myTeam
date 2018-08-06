@@ -11,7 +11,7 @@ public class Task {
     
     private ProjectPhase projectPhase;//add
     
-    private User leader;//add
+    private User user;//add
 
     private Date createTime;
 
@@ -58,12 +58,12 @@ public class Task {
 		this.projectPhase = projectPhase;
 	}
 
-	public User getLeader() {
-		return leader;
+	public User getUser() {
+		return user;
 	}
 
-	public void setLeader(User leader) {
-		this.leader = leader;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Date getCreateTime() {

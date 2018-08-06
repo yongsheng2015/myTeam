@@ -43,6 +43,7 @@ public class FileTable {
         this.tid = tid;
     }
 
+    //add
     public ProjectTable getProjectTable() {
 		return projectTable;
 	}
@@ -82,6 +83,4 @@ public class FileTable {
     public void setCreatTime(Date creatTime) {
         this.creatTime = creatTime;
     }
-    
-    
 }

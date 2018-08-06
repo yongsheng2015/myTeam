@@ -5,14 +5,18 @@ import java.util.Date;
 public class Share {
     private Integer id;
 
+    private Integer sharerId;
+
     private Integer ptid;
 
     private Integer tid;
+
+    private User sharer;//add
     
     private ProjectTable projectTable;//add
     
     private Task task;//add
-
+    
     private String title;
 
     private String content;
@@ -25,6 +29,14 @@ public class Share {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSharerId() {
+        return sharerId;
+    }
+
+    public void setSharerId(Integer sharerId) {
+        this.sharerId = sharerId;
     }
 
     public Integer getPtid() {
@@ -43,8 +55,16 @@ public class Share {
         this.tid = tid;
     }
     
-  //add  
-    public ProjectTable getProjectTable() {
+  //add
+    public User getSharer() {
+		return sharer;
+	}
+
+	public void setSharer(User sharer) {
+		this.sharer = sharer;
+	}
+
+	public ProjectTable getProjectTable() {
 		return projectTable;
 	}
 
@@ -64,7 +84,7 @@ public class Share {
         return title;
     }
 
-	public void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
     }
 

@@ -3,6 +3,7 @@
 <mapper namespace="cn.scau.myteam.mapper.ShareMapper">
   <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.Share">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sharerId" jdbcType="INTEGER" property="sharerId" />
     <result column="ptid" jdbcType="INTEGER" property="ptid" />
     <result column="tid" jdbcType="INTEGER" property="tid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -39,7 +40,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, ptid, tid, title, content, createTime
+    id, sharerId, ptid, tid, title, content, createTime
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ShareExample" resultMap="BaseResultMap">
     select
@@ -67,14 +68,19 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Share" useGeneratedKeys="true">
-    insert into share (ptid, tid, title, 
-      content, createTime)
-    values (#{ptid,jdbcType=INTEGER}, #{tid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    insert into share (sharerId, ptid, tid, 
+      title, content, createTime
+      )
+    values (#{sharerId,jdbcType=INTEGER}, #{ptid,jdbcType=INTEGER}, #{tid,jdbcType=INTEGER}, 
+      #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Share" useGeneratedKeys="true">
     insert into share
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sharerId != null">
+        sharerId,
+      </if>
       <if test="ptid != null">
         ptid,
       </if>
@@ -92,6 +98,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sharerId != null">
+        #{sharerId,jdbcType=INTEGER},
+      </if>
       <if test="ptid != null">
         #{ptid,jdbcType=INTEGER},
       </if>
@@ -112,6 +121,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scau.myteam.pojo.Share">
     update share
     <set>
+      <if test="sharerId != null">
+        sharerId = #{sharerId,jdbcType=INTEGER},
+      </if>
       <if test="ptid != null">
         ptid = #{ptid,jdbcType=INTEGER},
       </if>
@@ -132,7 +144,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scau.myteam.pojo.Share">
     update share
-    set ptid = #{ptid,jdbcType=INTEGER},
+    set sharerId = #{sharerId,jdbcType=INTEGER},
+      ptid = #{ptid,jdbcType=INTEGER},
       tid = #{tid,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},

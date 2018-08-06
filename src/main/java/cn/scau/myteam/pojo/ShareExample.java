@@ -165,6 +165,66 @@ public class ShareExample {
             return (Criteria) this;
         }
 
+        public Criteria andSharerIdIsNull() {
+            addCriterion("sharerId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdIsNotNull() {
+            addCriterion("sharerId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdEqualTo(Integer value) {
+            addCriterion("sharerId =", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdNotEqualTo(Integer value) {
+            addCriterion("sharerId <>", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdGreaterThan(Integer value) {
+            addCriterion("sharerId >", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sharerId >=", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdLessThan(Integer value) {
+            addCriterion("sharerId <", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdLessThanOrEqualTo(Integer value) {
+            addCriterion("sharerId <=", value, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdIn(List<Integer> values) {
+            addCriterion("sharerId in", values, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdNotIn(List<Integer> values) {
+            addCriterion("sharerId not in", values, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdBetween(Integer value1, Integer value2) {
+            addCriterion("sharerId between", value1, value2, "sharerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSharerIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("sharerId not between", value1, value2, "sharerId");
+            return (Criteria) this;
+        }
+
         public Criteria andPtidIsNull() {
             addCriterion("ptid is null");
             return (Criteria) this;

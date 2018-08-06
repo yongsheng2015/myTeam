@@ -3,6 +3,7 @@
 <mapper namespace="cn.scau.myteam.mapper.ProjectTableMapper">
   <resultMap id="BaseResultMap" type="cn.scau.myteam.pojo.ProjectTable">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creatorId" jdbcType="INTEGER" property="creatorId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="intro" jdbcType="VARCHAR" property="intro" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
@@ -38,7 +39,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, title, intro, createTime, endTime
+    id, creatorId, title, intro, createTime, endTime
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.ProjectTableExample" resultMap="BaseResultMap">
     select
@@ -66,14 +67,17 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ProjectTable" useGeneratedKeys="true">
-    insert into projectTable (title, intro, createTime, 
-      endTime)
-    values (#{title,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{endTime,jdbcType=TIMESTAMP})
+    insert into projectTable (creatorId, title, intro, 
+      createTime, endTime)
+    values (#{creatorId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.ProjectTable" useGeneratedKeys="true">
     insert into projectTable
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="creatorId != null">
+        creatorId,
+      </if>
       <if test="title != null">
         title,
       </if>
@@ -88,6 +92,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=INTEGER},
+      </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
@@ -105,6 +112,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scau.myteam.pojo.ProjectTable">
     update projectTable
     <set>
+      <if test="creatorId != null">
+        creatorId = #{creatorId,jdbcType=INTEGER},
+      </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
       </if>
@@ -122,7 +132,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scau.myteam.pojo.ProjectTable">
     update projectTable
-    set title = #{title,jdbcType=VARCHAR},
+    set creatorId = #{creatorId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
       intro = #{intro,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},
       endTime = #{endTime,jdbcType=TIMESTAMP}

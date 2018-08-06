@@ -165,6 +165,66 @@ public class ProjectTableExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreatorIdIsNull() {
+            addCriterion("creatorId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdIsNotNull() {
+            addCriterion("creatorId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdEqualTo(Integer value) {
+            addCriterion("creatorId =", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdNotEqualTo(Integer value) {
+            addCriterion("creatorId <>", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdGreaterThan(Integer value) {
+            addCriterion("creatorId >", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("creatorId >=", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdLessThan(Integer value) {
+            addCriterion("creatorId <", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdLessThanOrEqualTo(Integer value) {
+            addCriterion("creatorId <=", value, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdIn(List<Integer> values) {
+            addCriterion("creatorId in", values, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdNotIn(List<Integer> values) {
+            addCriterion("creatorId not in", values, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdBetween(Integer value1, Integer value2) {
+            addCriterion("creatorId between", value1, value2, "creatorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreatorIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("creatorId not between", value1, value2, "creatorId");
+            return (Criteria) this;
+        }
+
         public Criteria andTitleIsNull() {
             addCriterion("title is null");
             return (Criteria) this;

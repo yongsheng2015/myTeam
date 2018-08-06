@@ -41,11 +41,7 @@ public class Message {
         this.receiverId = receiverId;
     }
     
-  //add:start
-    public String getContent() {
-        return content;
-    }
-
+  //add
     public User getSender() {
 		return sender;
 	}
@@ -61,9 +57,12 @@ public class Message {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
-	//add：end
 
-	public void setContent(String content) {
+	public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
 
