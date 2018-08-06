@@ -67,4 +67,14 @@ public class ProjectTableServiceImpl implements ProjectTableService {
 		return list;
 	}
 
+	@Override
+	public ArrayList<ProjectTable> findByCreatorId(int id) {
+		// TODO Auto-generated method stub
+		ProjectTableExample pro=new ProjectTableExample();
+		Criteria criteria=pro.createCriteria();
+		criteria.andCreatorIdEqualTo(id);
+		ArrayList<ProjectTable> list=(ArrayList<ProjectTable>)projectTableMapper.selectByExample(pro);
+		return list;
+	}
+
 }

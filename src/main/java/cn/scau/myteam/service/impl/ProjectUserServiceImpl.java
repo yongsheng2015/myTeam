@@ -1,14 +1,19 @@
 package cn.scau.myteam.service.impl;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.scau.myteam.mapper.ProjectTableMapper;
 import cn.scau.myteam.mapper.ProjectUsersMapper;
+import cn.scau.myteam.pojo.ProjectTable;
 import cn.scau.myteam.pojo.ProjectUsersExample;
 import cn.scau.myteam.pojo.ProjectUsersExample.Criteria;
 import cn.scau.myteam.pojo.ProjectUsersKey;
+import cn.scau.myteam.service.ProjectTableService;
 import cn.scau.myteam.service.ProjectUserService;
 @Service
 public class ProjectUserServiceImpl implements ProjectUserService {
@@ -16,6 +21,9 @@ public class ProjectUserServiceImpl implements ProjectUserService {
 	
 	@Autowired
 	private ProjectUsersMapper projectUsersMapper;
+	@Autowired
+	private ProjectTableMapper projectTableMapper;
+	
 	@Override
 	public boolean save(ProjectUsersKey projectUser) {
 		// TODO Auto-generated method stub
@@ -41,11 +49,11 @@ public class ProjectUserServiceImpl implements ProjectUserService {
 	}
 
 	@Override
-	public ArrayList<ProjectUsersKey> findByProjectId(int id) {
+	public ArrayList<ProjectUsersKey> findByProjectId(int projectid) {
 		// TODO Auto-generated method stub
 		ProjectUsersExample p=new ProjectUsersExample();
 		Criteria c=p.createCriteria();
-		c.andPtidEqualTo(id);
+		c.andPtidEqualTo(projectid);
 		ArrayList<ProjectUsersKey> list=(ArrayList<ProjectUsersKey>)projectUsersMapper.selectByExample(p);
 		
 		return list;
@@ -61,6 +69,21 @@ public class ProjectUserServiceImpl implements ProjectUserService {
 		return list;
 		
 		
+	}
+
+	//根据输入的用户id返回用户所参与的项目列表
+	@Override
+	public ArrayList<ProjectTable> findByUserId(int userid) {
+		// TODO Auto-generated method stub
+		ProjectUsersExample p=new ProjectUsersExample();
+		Criteria c=p.createCriteria();
+		c.andUidEqualTo(userid);
+		ArrayList<ProjectUsersKey> list=(ArrayList<ProjectUsersKey>)projectUsersMapper.selectByExample(p);
+		ArrayList<ProjectTable> pros=new ArrayList<ProjectTable>();
+		for(ProjectUsersKey puk:list){
+			pros.add(projectTableMapper.selectByPrimaryKey(puk.getPtid()));
+		}
+		return pros;
 	}
 
 }

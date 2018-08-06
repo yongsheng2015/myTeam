@@ -9,5 +9,6 @@ public interface ProjectTableService {
 	public boolean delete(int id);
 	public boolean update(ProjectTable projectTable);
 	public ProjectTable findById(int id);
+	public ArrayList<ProjectTable> findByCreatorId(int id);
 	public ArrayList<ProjectTable> findAll();
 }
