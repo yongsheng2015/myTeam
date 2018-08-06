@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	public boolean save(User user) {
 		// TODO Auto-generated method stub
 		try {
-			userMapper.insert(user);
+			userMapper.insertSelective(user);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 	public boolean update(User user) {
 		// TODO Auto-generated method stub
 		try {
-			userMapper.updateByPrimaryKey(user);
+			userMapper.updateByPrimaryKeySelective(user);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

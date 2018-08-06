@@ -19,7 +19,7 @@ public class TaskServiceImpl implements TaskService {
 	public boolean save(Task task) {
 		// TODO Auto-generated method stub
 		try {
-			taskMapper.insert(task);
+			taskMapper.insertSelective(task);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class TaskServiceImpl implements TaskService {
 	public boolean update(Task task) {
 		// TODO Auto-generated method stub
 		try {
-			taskMapper.updateByPrimaryKey(task);
+			taskMapper.updateByPrimaryKeySelective(task);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

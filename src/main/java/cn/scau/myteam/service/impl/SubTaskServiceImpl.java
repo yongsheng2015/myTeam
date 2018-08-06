@@ -5,21 +5,26 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.scau.myteam.mapper.MultiTableMapper;
 import cn.scau.myteam.mapper.SubTaskMapper;
+import cn.scau.myteam.mapper.TaskMapper;
 import cn.scau.myteam.pojo.SubTaskExample;
 import cn.scau.myteam.pojo.SubTaskExample.Criteria;
 import cn.scau.myteam.pojo.SubTaskKey;
+import cn.scau.myteam.pojo.Task;
 import cn.scau.myteam.service.SubTaskService;
 @Service
 public class SubTaskServiceImpl implements SubTaskService {
 
 	@Autowired
 	private SubTaskMapper  subTaskMapper;
+	@Autowired
+	private MultiTableMapper multiTableMapper;
 	@Override
 	public boolean save(SubTaskKey subTask) {
 		// TODO Auto-generated method stub
 		try {
-			subTaskMapper.insert(subTask);
+			subTaskMapper.insertSelective(subTask);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -39,14 +44,11 @@ public class SubTaskServiceImpl implements SubTaskService {
 		}
 	}
 
+	//根据一个子任务的id查找其父任务
 	@Override
-	public ArrayList<SubTaskKey> findBySubTaskId(int id) {
+	public ArrayList<Task> findBySubTaskId(int id) {
 		// TODO Auto-generated method stub
-		SubTaskExample s=new SubTaskExample();
-		Criteria c=s.createCriteria();
-		c.andSubTaskIdEqualTo(id);
-		ArrayList<SubTaskKey> list=(ArrayList<SubTaskKey>)subTaskMapper.selectByExample(s);
-		return list;
+		return multiTableMapper.findBySubTaskId(id);
 	}
 
 	@Override
@@ -57,6 +59,13 @@ public class SubTaskServiceImpl implements SubTaskService {
 		c.andSubTaskIdIsNotNull();
 		ArrayList<SubTaskKey> list=(ArrayList<SubTaskKey>)subTaskMapper.selectByExample(s);
 		return list;
+	}
+
+	//查找一个任务下的子任务，返回子任务列表
+	@Override
+	public ArrayList<Task> findByTaskId(int id) {
+		// TODO Auto-generated method stub
+		return multiTableMapper.findByTaskId(id);
 	}
 
 }

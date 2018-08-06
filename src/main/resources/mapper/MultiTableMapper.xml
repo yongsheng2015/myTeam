@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.scau.myteam.mapper.MultiTableMapper">	
+    <!-- 根据输入的用户id返回用户所参与的项目列表(ProjectUserServiceImpl) -->
+	<select id="findByUserId" parameterType="int" resultType="ProjectTable">
+		select *from  projectTable where id in (select ptid from projectUsers where uid = #{uid})
+	</select>	
+	
+	<!--     根据一个子任务的id查找其父任务 -->
+    <select id="findBySubTaskId" parameterType="int" resultType="Task">
+    	select *from task where id in (select tid from subTask where subTaskId = #{subTaskId})
+    </select>
+    
+    <!-- 查找一个任务下的子任务，返回子任务列表 -->
+    <select id="findByTaskId" parameterType="int" resultType="Task">
+    	select *from task where id in (select subTaskId from subTask where tid = #{tid} )
+    </select>
+    
+    <!-- 根据任务的id查找改任务的成员 -->
+    <select id="findByTaskId2" parameterType="int" resultType="User">
+    	select *from user where id in (select uid from taskUsers where tid = #{tid})
+    </select>
+    
+    <!-- 根据用户的id查询其参与的所有任务 -->
+    <select id="findByUserId2" parameterType="int" resultType="Task">
+    	select *from task where id in (select tid from taskUsers where uid = #{uid})
+    </select>
+    
+</mapper>

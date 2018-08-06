@@ -23,6 +23,42 @@ public class ProjectController {
 	private ProjectUserService projectUserService;
 	
 	//创建新的项目
+	@ResponseBody
+	@RequestMapping(value="/addProject",produces="application/json;charset=utf-8")
+	public String addProject(String user_id,String title,String intro) throws JSONException{
+		ProjectTable p=new ProjectTable();
+		p.setCreatorId(Integer.valueOf(user_id));
+		p.setTitle(title);
+		p.setIntro(intro);
+		boolean flag=projectTableService.save(p);
+		JSONObject json=new JSONObject();
+		json.accumulate("addFlag", flag);
+		return json.toString();
+	}
+	//删除项目
+	@ResponseBody
+	@RequestMapping(value="/deleteProject",produces="application/json;charset=utf-8")
+	public String deleteProject(String pro_id) throws JSONException{
+		boolean flag=projectTableService.delete(Integer.valueOf(pro_id));
+		JSONObject json=new JSONObject();
+		json.accumulate("deleteFlag", flag);
+		return json.toString();
+	}
+	
+	//更新项目信息
+	@ResponseBody
+	@RequestMapping(value="/updateProject",produces="application/json;charset=utf-8")
+	public String updateProject(String pro_id,String title,String intro) throws JSONException{
+//		ProjectTable p=projectTableService.findById(Integer.valueOf(pro_id));
+		ProjectTable p=new ProjectTable();
+		p.setId(Integer.valueOf(pro_id));
+		p.setTitle(title);
+		p.setIntro(intro);
+		boolean flag=projectTableService.update(p);
+		JSONObject json=new JSONObject();
+		json.accumulate("updateFlag", flag);
+		return json.toString();
+	}
 	
 	//查看我创建的项目
 	@ResponseBody
@@ -36,7 +72,7 @@ public class ProjectController {
 	
 	//查看我所参与的项目
 	@ResponseBody
-	@RequestMapping(value="/fingMyproject",produces="application/json;charset=utf-8")
+	@RequestMapping(value="/fingProject",produces="application/json;charset=utf-8")
 	public String findProject(String user_id) throws JSONException{
 		ArrayList<ProjectTable> list=projectUserService.findByUserId(Integer.valueOf(user_id));
 		JSONObject json=new JSONObject();

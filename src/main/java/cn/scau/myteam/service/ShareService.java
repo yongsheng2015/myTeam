@@ -10,4 +10,5 @@ public interface ShareService {
 	public boolean update(Share share);
 	public Share findById(int id);
 	public ArrayList<Share> findAll();
+	public ArrayList<Share> findByShareId(int id);
 }

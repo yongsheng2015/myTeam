@@ -19,7 +19,7 @@ public class ProjectPhaseServiceImpl implements ProjectPhaseService {
 	public boolean save(ProjectPhase projectPhase) {
 		// TODO Auto-generated method stub
 		try {
-			projectPhaseMapper.insert(projectPhase);
+			projectPhaseMapper.insertSelective(projectPhase);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class ProjectPhaseServiceImpl implements ProjectPhaseService {
 	public boolean update(ProjectPhase projectPhase) {
 		// TODO Auto-generated method stub
 		try {
-			projectPhaseMapper.updateByPrimaryKey(projectPhase);
+			projectPhaseMapper.updateByPrimaryKeySelective(projectPhase);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

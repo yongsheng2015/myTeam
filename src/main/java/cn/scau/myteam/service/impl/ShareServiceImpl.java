@@ -19,7 +19,7 @@ public class ShareServiceImpl implements ShareService {
 	public boolean save(Share share) {
 		// TODO Auto-generated method stub
 		try {
-			shareMapper.insert(share);
+			shareMapper.insertSelective(share);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class ShareServiceImpl implements ShareService {
 	public boolean update(Share share) {
 		// TODO Auto-generated method stub
 		try {
-			shareMapper.updateByPrimaryKey(share);
+			shareMapper.updateByPrimaryKeySelective(share);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -66,6 +66,16 @@ public class ShareServiceImpl implements ShareService {
 		ArrayList<Share> list=(ArrayList<Share>)shareMapper.selectByExample(shareExample);
 		return list;
 		
+	}
+
+	@Override
+	public ArrayList<Share> findByShareId(int id) {
+		// TODO Auto-generated method stub
+		ShareExample shareExample=new ShareExample();
+		Criteria c=shareExample.createCriteria();
+		c.andSharerIdEqualTo(id);
+		ArrayList<Share> list=(ArrayList<Share>)shareMapper.selectByExample(shareExample);
+		return list;
 	}
 
 }

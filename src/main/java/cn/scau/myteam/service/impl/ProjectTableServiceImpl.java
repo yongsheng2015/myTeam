@@ -19,7 +19,7 @@ public class ProjectTableServiceImpl implements ProjectTableService {
 	public boolean save(ProjectTable projectTable) {
 		// TODO Auto-generated method stub
 		try {
-			projectTableMapper.insert(projectTable);
+			projectTableMapper.insertSelective(projectTable);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,8 @@ public class ProjectTableServiceImpl implements ProjectTableService {
 	public boolean update(ProjectTable projectTable) {
 		// TODO Auto-generated method stub
 		try {
-			projectTableMapper.updateByPrimaryKey(projectTable);
+			projectTableMapper.updateByPrimaryKeySelective(projectTable);
+			
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

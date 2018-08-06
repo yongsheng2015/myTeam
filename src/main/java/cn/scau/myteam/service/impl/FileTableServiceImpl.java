@@ -19,7 +19,7 @@ public class FileTableServiceImpl implements FileTableService {
 	public boolean save(FileTable fileTable) {
 		// TODO Auto-generated method stub
 		try {
-			fileTableMapper.insert(fileTable);
+			fileTableMapper.insertSelective(fileTable);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class FileTableServiceImpl implements FileTableService {
 	public boolean update(FileTable fileTable) {
 		// TODO Auto-generated method stub
 		try {
-			fileTableMapper.updateByPrimaryKey(fileTable);
+			fileTableMapper.updateByPrimaryKeySelective(fileTable);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

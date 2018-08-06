@@ -19,7 +19,7 @@ public class MessageServiceImpl implements MessageService {
 	public boolean save(Message message) {
 		// TODO Auto-generated method stub
 		try {
-			messageMapper.insert(message);
+			messageMapper.insertSelective(message);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -43,7 +43,7 @@ public class MessageServiceImpl implements MessageService {
 	public boolean update(Message user) {
 		// TODO Auto-generated method stub
 		try {
-			messageMapper.updateByPrimaryKey(user);
+			messageMapper.updateByPrimaryKeySelective(user);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
