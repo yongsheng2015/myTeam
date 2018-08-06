@@ -30,7 +30,6 @@ public class ProjectPhase {
     }
     
   //add
-
     public ProjectTable getProjectTable() {
 		return projectTable;
 	}

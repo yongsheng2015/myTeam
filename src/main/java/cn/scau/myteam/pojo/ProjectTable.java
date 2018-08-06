@@ -5,6 +5,10 @@ import java.util.Date;
 public class ProjectTable {
     private Integer id;
 
+    private Integer creatorId;
+    
+    private User creator;//add
+
     private String title;
 
     private String intro;
@@ -21,7 +25,24 @@ public class ProjectTable {
         this.id = id;
     }
 
-    public String getTitle() {
+    public Integer getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(Integer creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    //add
+    public User getCreator() {
+		return creator;
+	}
+
+	public void setCreator(User creator) {
+		this.creator = creator;
+	}
+
+	public String getTitle() {
         return title;
     }
 
