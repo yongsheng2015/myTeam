@@ -28,7 +28,7 @@ public class ProjectUserServiceImpl implements ProjectUserService {
 	public boolean save(ProjectUsersKey projectUser) {
 		// TODO Auto-generated method stub
 		try {
-			projectUsersMapper.insert(projectUser);
+			projectUsersMapper.insertSelective(projectUser);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
