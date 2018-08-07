@@ -9,6 +9,7 @@ public interface FileTableService {
 	public boolean delete(int id);
 	public boolean update(FileTable fileTable);
 	public FileTable findById(int id);
+	
 	public ArrayList<FileTable> findAll();
 	
 }
