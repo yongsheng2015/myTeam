@@ -34,7 +34,7 @@ public class FileController {
 	}
 	//多文件上传
 	@RequestMapping("/multifile")
-	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request){
+	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request){ 
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		File targetDir=new File(realpath);
 //		if(!targetDir.exists()){
