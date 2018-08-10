@@ -17,9 +17,9 @@ public class Task {
 
     private Date endTime;
 
-    private String setRepeat;
+    private Date setRemind;
 
-    private String setRemind;
+    private String setRepeat;
 
     private String content;
 
@@ -57,7 +57,7 @@ public class Task {
         this.uid = uid;
     }
     
-  //add
+    //add
     public ProjectPhase getProjectPhase() {
 		return projectPhase;
 	}
@@ -74,7 +74,7 @@ public class Task {
 		this.user = user;
 	}
 
-	public Date getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
@@ -90,20 +90,20 @@ public class Task {
         this.endTime = endTime;
     }
 
+    public Date getSetRemind() {
+        return setRemind;
+    }
+
+    public void setSetRemind(Date setRemind) {
+        this.setRemind = setRemind;
+    }
+
     public String getSetRepeat() {
         return setRepeat;
     }
 
     public void setSetRepeat(String setRepeat) {
         this.setRepeat = setRepeat == null ? null : setRepeat.trim();
-    }
-
-    public String getSetRemind() {
-        return setRemind;
-    }
-
-    public void setSetRemind(String setRemind) {
-        this.setRemind = setRemind == null ? null : setRemind.trim();
     }
 
     public String getContent() {
@@ -153,4 +153,6 @@ public class Task {
     public void setRecord(String record) {
         this.record = record == null ? null : record.trim();
     }
+
+	
 }

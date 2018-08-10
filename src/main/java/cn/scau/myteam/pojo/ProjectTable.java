@@ -32,8 +32,8 @@ public class ProjectTable {
     public void setCreatorId(Integer creatorId) {
         this.creatorId = creatorId;
     }
-
-  //add
+    
+    //add
     public User getCreator() {
 		return creator;
 	}
@@ -42,7 +42,7 @@ public class ProjectTable {
 		this.creator = creator;
 	}
 
-	public String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -73,4 +73,5 @@ public class ProjectTable {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
 }

@@ -42,7 +42,7 @@ public class Message {
     }
     
     //add
-    public User getSender() {
+	public User getSender() {
 		return sender;
 	}
 
@@ -57,8 +57,9 @@ public class Message {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
+    
 
-	public String getContent() {
+    public String getContent() {
         return content;
     }
 

@@ -405,6 +405,66 @@ public class TaskExample {
             return (Criteria) this;
         }
 
+        public Criteria andSetRemindIsNull() {
+            addCriterion("setRemind is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindIsNotNull() {
+            addCriterion("setRemind is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindEqualTo(Date value) {
+            addCriterion("setRemind =", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindNotEqualTo(Date value) {
+            addCriterion("setRemind <>", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindGreaterThan(Date value) {
+            addCriterion("setRemind >", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindGreaterThanOrEqualTo(Date value) {
+            addCriterion("setRemind >=", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindLessThan(Date value) {
+            addCriterion("setRemind <", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindLessThanOrEqualTo(Date value) {
+            addCriterion("setRemind <=", value, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindIn(List<Date> values) {
+            addCriterion("setRemind in", values, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindNotIn(List<Date> values) {
+            addCriterion("setRemind not in", values, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindBetween(Date value1, Date value2) {
+            addCriterion("setRemind between", value1, value2, "setRemind");
+            return (Criteria) this;
+        }
+
+        public Criteria andSetRemindNotBetween(Date value1, Date value2) {
+            addCriterion("setRemind not between", value1, value2, "setRemind");
+            return (Criteria) this;
+        }
+
         public Criteria andSetRepeatIsNull() {
             addCriterion("setRepeat is null");
             return (Criteria) this;
@@ -472,76 +532,6 @@ public class TaskExample {
 
         public Criteria andSetRepeatNotBetween(String value1, String value2) {
             addCriterion("setRepeat not between", value1, value2, "setRepeat");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindIsNull() {
-            addCriterion("setRemind is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindIsNotNull() {
-            addCriterion("setRemind is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindEqualTo(String value) {
-            addCriterion("setRemind =", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindNotEqualTo(String value) {
-            addCriterion("setRemind <>", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindGreaterThan(String value) {
-            addCriterion("setRemind >", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindGreaterThanOrEqualTo(String value) {
-            addCriterion("setRemind >=", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindLessThan(String value) {
-            addCriterion("setRemind <", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindLessThanOrEqualTo(String value) {
-            addCriterion("setRemind <=", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindLike(String value) {
-            addCriterion("setRemind like", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindNotLike(String value) {
-            addCriterion("setRemind not like", value, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindIn(List<String> values) {
-            addCriterion("setRemind in", values, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindNotIn(List<String> values) {
-            addCriterion("setRemind not in", values, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindBetween(String value1, String value2) {
-            addCriterion("setRemind between", value1, value2, "setRemind");
-            return (Criteria) this;
-        }
-
-        public Criteria andSetRemindNotBetween(String value1, String value2) {
-            addCriterion("setRemind not between", value1, value2, "setRemind");
             return (Criteria) this;
         }
 

@@ -43,7 +43,7 @@ public class FileTable {
         this.tid = tid;
     }
     
-  //add
+    //add
     public ProjectTable getProjectTable() {
 		return projectTable;
 	}
@@ -59,12 +59,13 @@ public class FileTable {
 	public void setTask(Task task) {
 		this.task = task;
 	}
-	
+    
+
     public String getType() {
         return type;
     }
 
-	public void setType(String type) {
+    public void setType(String type) {
         this.type = type == null ? null : type.trim();
     }
 
