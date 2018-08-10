@@ -10,13 +10,13 @@ public class Share {
     private Integer ptid;
 
     private Integer tid;
-
+    
     private User sharer;//add
     
     private ProjectTable projectTable;//add
     
     private Task task;//add
-    
+
     private String title;
 
     private String content;

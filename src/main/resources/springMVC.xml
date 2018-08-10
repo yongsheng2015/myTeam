@@ -15,7 +15,15 @@
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
  
-    <mvc:annotation-driven />
+    <!-- <mvc:annotation-driven /> -->
+    <!-- 处理json中文问题 -->
+    <mvc:annotation-driven >
+	   <mvc:message-converters register-defaults="true">
+	      <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	         <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+	      </bean>
+	   </mvc:message-converters>    
+    </mvc:annotation-driven>
  
     <!--开通静态资源的访问-->
     <mvc:default-servlet-handler />
@@ -33,11 +41,11 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
     
     <!-- 新增登录拦截器 -->
-    <mvc:interceptors>
+    <!-- <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
             <bean class="cn.scau.myteam.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors> -->
     
 </beans>

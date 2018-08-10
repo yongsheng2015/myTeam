@@ -28,7 +28,7 @@ public class ProjectPhase {
     public void setPtid(Integer ptid) {
         this.ptid = ptid;
     }
-    
+
   //add
     public ProjectTable getProjectTable() {
 		return projectTable;

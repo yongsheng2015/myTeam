@@ -41,7 +41,7 @@ public class Message {
         this.receiverId = receiverId;
     }
     
-  //add
+    //add
     public User getSender() {
 		return sender;
 	}

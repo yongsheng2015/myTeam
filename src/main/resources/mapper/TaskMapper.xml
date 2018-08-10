@@ -8,9 +8,13 @@
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
     <result column="setRepeat" jdbcType="VARCHAR" property="setRepeat" />
-    <result column="label" jdbcType="VARCHAR" property="label" />
+    <result column="setRemind" jdbcType="VARCHAR" property="setRemind" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="priority" jdbcType="VARCHAR" property="priority" />
-    <result column="intro" jdbcType="VARCHAR" property="intro" />
+    <result column="label" jdbcType="VARCHAR" property="label" />
+    <result column="isFinished" jdbcType="VARCHAR" property="isFinished" />
+    <result column="record" jdbcType="VARCHAR" property="record" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -42,7 +46,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, ppid, uid, createTime, endTime, setRepeat, label, priority, intro
+    id, ppid, uid, createTime, endTime, setRepeat, setRemind, content, remark, priority, 
+    label, isFinished, record
   </sql>
   <select id="selectByExample" parameterType="cn.scau.myteam.pojo.TaskExample" resultMap="BaseResultMap">
     select
@@ -71,11 +76,15 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Task" useGeneratedKeys="true">
     insert into task (ppid, uid, createTime, 
-      endTime, setRepeat, label, 
-      priority, intro)
+      endTime, setRepeat, setRemind, 
+      content, remark, priority, 
+      label, isFinished, record
+      )
     values (#{ppid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{endTime,jdbcType=TIMESTAMP}, #{setRepeat,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, 
-      #{priority,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR})
+      #{endTime,jdbcType=TIMESTAMP}, #{setRepeat,jdbcType=VARCHAR}, #{setRemind,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{priority,jdbcType=VARCHAR}, 
+      #{label,jdbcType=VARCHAR}, #{isFinished,jdbcType=VARCHAR}, #{record,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.scau.myteam.pojo.Task" useGeneratedKeys="true">
     insert into task
@@ -95,14 +104,26 @@
       <if test="setRepeat != null">
         setRepeat,
       </if>
-      <if test="label != null">
-        label,
+      <if test="setRemind != null">
+        setRemind,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="remark != null">
+        remark,
       </if>
       <if test="priority != null">
         priority,
       </if>
-      <if test="intro != null">
-        intro,
+      <if test="label != null">
+        label,
+      </if>
+      <if test="isFinished != null">
+        isFinished,
+      </if>
+      <if test="record != null">
+        record,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -121,14 +142,26 @@
       <if test="setRepeat != null">
         #{setRepeat,jdbcType=VARCHAR},
       </if>
-      <if test="label != null">
-        #{label,jdbcType=VARCHAR},
+      <if test="setRemind != null">
+        #{setRemind,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="priority != null">
         #{priority,jdbcType=VARCHAR},
       </if>
-      <if test="intro != null">
-        #{intro,jdbcType=VARCHAR},
+      <if test="label != null">
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinished != null">
+        #{isFinished,jdbcType=VARCHAR},
+      </if>
+      <if test="record != null">
+        #{record,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -150,14 +183,26 @@
       <if test="setRepeat != null">
         setRepeat = #{setRepeat,jdbcType=VARCHAR},
       </if>
-      <if test="label != null">
-        label = #{label,jdbcType=VARCHAR},
+      <if test="setRemind != null">
+        setRemind = #{setRemind,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="priority != null">
         priority = #{priority,jdbcType=VARCHAR},
       </if>
-      <if test="intro != null">
-        intro = #{intro,jdbcType=VARCHAR},
+      <if test="label != null">
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinished != null">
+        isFinished = #{isFinished,jdbcType=VARCHAR},
+      </if>
+      <if test="record != null">
+        record = #{record,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -169,9 +214,13 @@
       createTime = #{createTime,jdbcType=TIMESTAMP},
       endTime = #{endTime,jdbcType=TIMESTAMP},
       setRepeat = #{setRepeat,jdbcType=VARCHAR},
-      label = #{label,jdbcType=VARCHAR},
+      setRemind = #{setRemind,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       priority = #{priority,jdbcType=VARCHAR},
-      intro = #{intro,jdbcType=VARCHAR}
+      label = #{label,jdbcType=VARCHAR},
+      isFinished = #{isFinished,jdbcType=VARCHAR},
+      record = #{record,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
