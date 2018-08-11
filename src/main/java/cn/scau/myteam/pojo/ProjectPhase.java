@@ -29,8 +29,8 @@ public class ProjectPhase {
         this.ptid = ptid;
     }
     
-  //add
-    public ProjectTable getProjectTable() {
+    //add
+	public ProjectTable getProjectTable() {
 		return projectTable;
 	}
 
@@ -38,7 +38,7 @@ public class ProjectPhase {
 		this.projectTable = projectTable;
 	}
 
-	public String getName() {
+    public String getName() {
         return name;
     }
 

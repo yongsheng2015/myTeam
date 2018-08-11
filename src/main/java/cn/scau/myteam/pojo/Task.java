@@ -17,13 +17,21 @@ public class Task {
 
     private Date endTime;
 
+    private Date setRemind;
+
     private String setRepeat;
 
-    private String label;
+    private String content;
+
+    private String remark;
 
     private String priority;
 
-    private String intro;
+    private String label;
+
+    private String isFinished;
+
+    private String record;
 
     public Integer getId() {
         return id;
@@ -49,7 +57,7 @@ public class Task {
         this.uid = uid;
     }
     
-  //add
+    //add
     public ProjectPhase getProjectPhase() {
 		return projectPhase;
 	}
@@ -66,7 +74,7 @@ public class Task {
 		this.user = user;
 	}
 
-	public Date getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
@@ -82,6 +90,14 @@ public class Task {
         this.endTime = endTime;
     }
 
+    public Date getSetRemind() {
+        return setRemind;
+    }
+
+    public void setSetRemind(Date setRemind) {
+        this.setRemind = setRemind;
+    }
+
     public String getSetRepeat() {
         return setRepeat;
     }
@@ -90,12 +106,20 @@ public class Task {
         this.setRepeat = setRepeat == null ? null : setRepeat.trim();
     }
 
-    public String getLabel() {
-        return label;
+    public String getContent() {
+        return content;
     }
 
-    public void setLabel(String label) {
-        this.label = label == null ? null : label.trim();
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public String getPriority() {
@@ -106,11 +130,29 @@ public class Task {
         this.priority = priority == null ? null : priority.trim();
     }
 
-    public String getIntro() {
-        return intro;
+    public String getLabel() {
+        return label;
     }
 
-    public void setIntro(String intro) {
-        this.intro = intro == null ? null : intro.trim();
+    public void setLabel(String label) {
+        this.label = label == null ? null : label.trim();
     }
+
+    public String getIsFinished() {
+        return isFinished;
+    }
+
+    public void setIsFinished(String isFinished) {
+        this.isFinished = isFinished == null ? null : isFinished.trim();
+    }
+
+    public String getRecord() {
+        return record;
+    }
+
+    public void setRecord(String record) {
+        this.record = record == null ? null : record.trim();
+    }
+
+	
 }

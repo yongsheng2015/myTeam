@@ -41,8 +41,8 @@ public class Message {
         this.receiverId = receiverId;
     }
     
-  //add
-    public User getSender() {
+    //add
+	public User getSender() {
 		return sender;
 	}
 
@@ -57,8 +57,9 @@ public class Message {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
+    
 
-	public String getContent() {
+    public String getContent() {
         return content;
     }
 

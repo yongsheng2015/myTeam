@@ -10,13 +10,13 @@ public class Share {
     private Integer ptid;
 
     private Integer tid;
-
+    
     private User sharer;//add
     
     private ProjectTable projectTable;//add
     
     private Task task;//add
-    
+
     private String title;
 
     private String content;
@@ -55,7 +55,7 @@ public class Share {
         this.tid = tid;
     }
     
-  //add
+    //add
     public User getSharer() {
 		return sharer;
 	}
@@ -80,7 +80,7 @@ public class Share {
 		this.task = task;
 	}
 
-	public String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -103,4 +103,6 @@ public class Share {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    
 }

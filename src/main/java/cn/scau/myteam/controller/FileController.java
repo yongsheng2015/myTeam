@@ -62,10 +62,15 @@ public class FileController {
 		return json.toString();
 	}
 	//多文件上传
+<<<<<<< HEAD
 	@ResponseBody
 	@RequestMapping(value="/multifile",produces="application/json;charset=utf-8")
 	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request) throws JSONException{
 		boolean flag=true;
+=======
+	@RequestMapping("/multifile")
+	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request){ 
+>>>>>>> 64c9d5beb8b2e63e052e8f91e35e52df9e5f433f
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		File targetDir=new File(realpath);
 //		if(!targetDir.exists()){

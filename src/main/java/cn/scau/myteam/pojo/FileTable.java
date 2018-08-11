@@ -42,7 +42,7 @@ public class FileTable {
     public void setTid(Integer tid) {
         this.tid = tid;
     }
-
+    
     //add
     public ProjectTable getProjectTable() {
 		return projectTable;
@@ -59,8 +59,9 @@ public class FileTable {
 	public void setTask(Task task) {
 		this.task = task;
 	}
+    
 
-	public String getType() {
+    public String getType() {
         return type;
     }
 
