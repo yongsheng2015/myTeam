@@ -1,17 +1,9 @@
 package cn.scau.myteam.controller;
-<<<<<<< HEAD
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-=======
-/*
->>>>>>> 64c9d5beb8b2e63e052e8f91e35e52df9e5f433f
-import org.json.JSONException;
-import org.json.JSONObject;*/
-import net.sf.json.JSONException;
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +14,8 @@ import cn.scau.myteam.pojo.User;
 import cn.scau.myteam.service.UserService;
 import cn.scau.myteam.util.MD5Util;
 import cn.scau.myteam.util.ValidateCode;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 
 @Controller
 public class UserController {

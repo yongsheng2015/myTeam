@@ -2,9 +2,6 @@ package cn.scau.myteam.controller;
 
 import java.util.ArrayList;
 
-import org.apache.ibatis.annotations.Param;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.scau.myteam.pojo.Share;
 import cn.scau.myteam.service.ShareService;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 
 @Controller
 public class ShareController {

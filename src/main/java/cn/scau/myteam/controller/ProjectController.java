@@ -2,27 +2,16 @@ package cn.scau.myteam.controller;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.junit.runners.Parameterized.Parameter;
-=======
-/*import org.json.JSONException;
-import org.json.JSONObject;*/
-import net.sf.json.JSONException;
-import net.sf.json.JSONObject;
-
->>>>>>> 64c9d5beb8b2e63e052e8f91e35e52df9e5f433f
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.scau.myteam.pojo.ProjectTable;
-import cn.scau.myteam.pojo.User;
 import cn.scau.myteam.service.ProjectTableService;
 import cn.scau.myteam.service.ProjectUserService;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 
 @Controller
 public class ProjectController {

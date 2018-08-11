@@ -1,7 +1,5 @@
 package cn.scau.myteam.controller;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -11,8 +9,6 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,12 +19,14 @@ import cn.scau.myteam.util.FileDomain;
 import cn.scau.myteam.util.FileUtil;
 import cn.scau.myteam.util.MultiFileDomain;
 import cn.scau.myteam.util.UTF8Util;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 @Controller
 public class FileController {
 	//单文件上传
 	@ResponseBody
 	@RequestMapping(value="/onefile",produces="application/json;charset=utf-8")
-	public String upload(@ModelAttribute FileDomain fileDomain,HttpServletRequest request) throws JSONException{
+	public String upload(@ModelAttribute FileDomain fileDomain,HttpServletRequest request){
 		boolean flag=false;
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		String filename=fileDomain.getMyfile().getOriginalFilename();
@@ -50,7 +48,7 @@ public class FileController {
 	//显示文件
 	@ResponseBody
 	@RequestMapping(value="/showFiles",produces="application/json;charset=utf-8")
-	public String showFiles(HttpServletRequest request) throws JSONException{
+	public String showFiles(HttpServletRequest request) {
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		ArrayList<File> list=FileUtil.getFiles(realpath);
 		ArrayList<String> list2=new ArrayList<String>();
@@ -64,7 +62,7 @@ public class FileController {
 	//多文件上传
 	@ResponseBody
 	@RequestMapping(value="/multifile",produces="application/json;charset=utf-8")
-	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request) throws JSONException{
+	public String multiFileUpload(@ModelAttribute MultiFileDomain multiFileDomain,HttpServletRequest request) {
 		boolean flag=true;
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		File targetDir=new File(realpath);
@@ -93,7 +91,7 @@ public class FileController {
 	//文件下载
 	@ResponseBody
 	@RequestMapping(value="downFile",produces="application/json;charset=utf-8")
-	public String downFile(String filename,HttpServletRequest request,HttpServletResponse response) throws JSONException{
+	public String downFile(String filename,HttpServletRequest request,HttpServletResponse response) {
 		boolean flag=true;
 		String aFilePath=null;
 		FileInputStream in=null;
@@ -128,7 +126,7 @@ public class FileController {
 	//创建文件夹
 	@ResponseBody
 	@RequestMapping(value="createFolder",produces="application/json;charset=utf-8")
-	public String createFolder(String foldername,HttpServletRequest request) throws JSONException{
+	public String createFolder(String foldername,HttpServletRequest request) {
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		boolean flag=FileUtil.CreatFolder(realpath+"/"+foldername);		
 		JSONObject json=new JSONObject();
@@ -138,7 +136,7 @@ public class FileController {
 	//删除文件
 	@ResponseBody
 	@RequestMapping(value="deleteFile",produces="application/json;charset=utf-8")
-	public String deleteFile(String filename,HttpServletRequest request) throws JSONException{	
+	public String deleteFile(String filename,HttpServletRequest request) {	
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		boolean flag=FileUtil.DeleteFile(realpath+"/"+filename);
 		JSONObject json=new JSONObject();
@@ -148,7 +146,7 @@ public class FileController {
 	//删除文件夹
 	@ResponseBody
 	@RequestMapping(value="deleteFolder",produces="application/json;charset=utf-8")
-	 public String deleteFolder(String foldername,HttpServletRequest request) throws JSONException{
+	 public String deleteFolder(String foldername,HttpServletRequest request) {
 		String realpath=request.getServletContext().getRealPath("uploadfiles");
 		System.out.println(realpath+"/"+foldername);
 		boolean flag=FileUtil.DeleteFolder(realpath+"/"+foldername);
