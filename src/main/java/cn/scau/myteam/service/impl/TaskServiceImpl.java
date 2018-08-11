@@ -1,6 +1,7 @@
 package cn.scau.myteam.service.impl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,15 @@ public class TaskServiceImpl implements TaskService {
 		c.andIdIsNotNull();
 		ArrayList<Task> list=(ArrayList<Task>)taskMapper.selectByExample(te);
 		return list;
+	}
+
+	@Override
+	public List<Task> findAll(int ppid) {
+		// TODO Auto-generated method stub
+		TaskExample example = new TaskExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andPpidEqualTo(ppid);
+		return taskMapper.selectByExample(example);
 	}
 
 }
