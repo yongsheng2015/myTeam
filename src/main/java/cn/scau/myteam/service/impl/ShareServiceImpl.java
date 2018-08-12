@@ -78,4 +78,24 @@ public class ShareServiceImpl implements ShareService {
 		return list;
 	}
 
+	@Override
+	public ArrayList<Share> findByProjectId(int id) {
+		// TODO Auto-generated method stub
+		ShareExample shareExample=new ShareExample();
+		Criteria c=shareExample.createCriteria();
+		c.andPtidEqualTo(id);
+		ArrayList<Share> list=(ArrayList<Share>)shareMapper.selectByExample(shareExample);
+		return list;
+	}
+
+	@Override
+	public ArrayList<Share> findByTaskId(int id) {
+		// TODO Auto-generated method stub
+		ShareExample shareExample=new ShareExample();
+		Criteria c=shareExample.createCriteria();
+		c.andTidEqualTo(id);
+		ArrayList<Share> list=(ArrayList<Share>)shareMapper.selectByExample(shareExample);
+		return list;
+	}
+
 }

@@ -11,4 +11,6 @@ public interface ShareService {
 	public Share findById(int id);
 	public ArrayList<Share> findAll();
 	public ArrayList<Share> findByShareId(int id);
+	public ArrayList<Share> findByProjectId(int id);
+	public ArrayList<Share> findByTaskId(int id);
 }

@@ -2,16 +2,14 @@ package cn.scau.myteam.util;
 
 
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 
 public class FileUtil {
@@ -75,9 +73,15 @@ public class FileUtil {
 	public static boolean DeleteFolder(String path){
 		File file=new File(path);
 		if(!file.exists())
+		{
+			System.out.println("文件不存在");
 			return false;
+		}
 		if(!file.isDirectory())
+		{
+			System.out.println("非文件夹");
 			return false;
+		}
 		File[] filelist=file.listFiles();
 		for(File f:filelist){
 			System.out.println(f.getPath());
@@ -92,9 +96,22 @@ public class FileUtil {
 		file.delete();
 		return true;
 	}
+	
+	//获取文件夹下的所有文件
+	public static ArrayList<File> getFiles(String path){
+		File file=new File(path);
+		File[] files=file.listFiles();
+		ArrayList<File> list=new ArrayList<File>();
+		for(File f:files){
+		  list.add(f);
+		}
+		return list;
+	}
 	public static void main(String[] args){
-		if(FileUtil.DeleteFolder("test"))
-			System.out.println("success");
+		ArrayList<File> list=FileUtil.getFiles("D:/");
+		for(File f:list){
+			System.out.println(f.getPath());
+		}
 	}
 	
 }

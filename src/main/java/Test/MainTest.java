@@ -1,5 +1,9 @@
 package Test;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+
+import java.security.MessageDigest;
 import java.sql.PseudoColumnUsage;
 import java.util.ArrayList;
 import java.util.Date;
@@ -70,10 +74,10 @@ public class MainTest {
 //		ProjectTable p3=projectTableService.findById(3);
 //		System.out.println(p3.getTitle());
 //		
-//		ArrayList<ProjectTable> list=projectTableService.findByCreatorId(3);
-//		for(ProjectTable pro:list){
-//			System.out.println(pro.getTitle());
-//		}
+		ArrayList<ProjectTable> list=projectTableService.findByCreatorId(3);
+		for(ProjectTable pro:list){
+			System.out.println(pro.getTitle());
+		}
 		
 		
 		
@@ -176,12 +180,12 @@ public class MainTest {
 		Share s=new Share();
 		s.setId(4);
 		s.setContent("share3");
-		shareService.update(s);
-		ArrayList<Share> list=shareService.findByShareId(2);
-		for(Share s1:list)
-		System.out.println(s1.getContent());
-		System.out.println("id"+shareService.findById(2).getContent());
-		ArrayList<Share> list2=shareService.findAll();
+//		shareService.update(s);
+//		ArrayList<Share> list=shareService.findByShareId(2);
+//		for(Share s1:list)
+//		System.out.println(s1.getContent());
+//		System.out.println("id"+shareService.findById(2).getContent());
+		ArrayList<Share> list2=shareService.findByTaskId(5);
 		for(Share s1:list2)
 		System.out.println(s1.getContent());
 	}
@@ -196,7 +200,7 @@ public class MainTest {
 			System.out.println(s.getLabel());
 	}
 	
-	@Test
+//	@Test
 	public void TaskUsersTest(){
 		TaskUsersKey t=new TaskUsersKey();
 		t.setTid(5);
@@ -207,4 +211,28 @@ public class MainTest {
 		}
 //		taskUsersService.delete(t);
 	}
+	@Test
+	public void Test1(){
+		String string="5448mjoe3210";
+		StringBuffer str=new StringBuffer();
+		char[] chars={ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
+			    'B', 'C', 'D', 'E', 'F' };
+		byte[] b=string.getBytes();
+		MessageDigest mDigest=null;
+		try{
+			mDigest=MessageDigest.getInstance("md5");
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		byte[] md5=mDigest.digest(b);
+		for(byte m:md5){
+			  str.append(chars[(m >> 4) & 0x0f]);
+			   str.append(chars[m & 0x0f]);
+			
+		}
+		System.out.println(str.toString());
+	}
+	
 }
